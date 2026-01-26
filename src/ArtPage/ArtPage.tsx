@@ -1,13 +1,13 @@
 //TO DO: 
-//Think of a way to computationally add images from a list into corresponding columns instead of 
-//manually doing it all yourself!! 
+//Make images clickable
+//Have imgs actually save info about image
 
 import './ArtPage.css'
 import { useRef } from 'react';
 
 import React, { useState } from 'react';
 
-function Img({img, title, medium, desc}) {
+function Img({img}) {
     return (
         <>
         <img src={img} width="100%"></img>
@@ -15,10 +15,13 @@ function Img({img, title, medium, desc}) {
     );
 }
 
-function Col({img}) {
+function Col({imgs}) {
+
     return (
-        <>
-        <div className="column">{img} </div>
+        <> 
+        <div className="column"> 
+                {imgs}
+        </div>
         </>
     );
 }
@@ -34,32 +37,63 @@ function Gallery() {
     }
 
     const artIll: Art[] = [
-        { type: "Ill", img: "./Assets/XavierGame.PNG", title: "Misty setps", medium: "Digital", desc: "Digital piece, made as a backdrop for a game I have in the making."},
-        { type: "Ill", img: "./Assets/Dreamland.jpg", title: "Three Pines", medium: "Watercolour", desc: "Digital piece, made as a backdrop for a game I have in the making."},
-        { type: "Ill", img: "./Assets/DreamKin.jpg", title: "Dream Land", medium: "Digital", desc: "Digital piece, made as a backdrop for a game I have in the making."},
-        { type: "Ill", img: "./Assets/Star.png", title: "How Stars are Born", medium: "Digital", desc: "Digital piece, made as a backdrop for a game I have in the making."},
+        { type: "Ill", img: "src/ArtPage/Assets/XavierGame.PNG", title: "Misty setps", medium: "Digital", desc: "Digital piece, made as a backdrop for a game I have in the making."},
+        { type: "Ill", img: "src/ArtPage/Assets/Dreamland.jpg", title: "Three Pines", medium: "Watercolour", desc: "Digital piece, made as a backdrop for a game I have in the making."},
+        { type: "Ill", img: "src/ArtPage/Assets/DreamKin.jpg", title: "Dream Land", medium: "Digital", desc: "Digital piece, made as a backdrop for a game I have in the making."},
+        { type: "Ill", img: "src/ArtPage/Assets/Star.png", title: "How Stars are Born", medium: "Digital", desc: "Digital piece, made as a backdrop for a game I have in the making."},
+        { type: "Ill", img: "src/ArtPage/Assets/DreamKin.jpg", title: "Dream Land", medium: "Digital", desc: "Digital piece, made as a backdrop for a game I have in the making."},
+        { type: "Ill", img: "src/ArtPage/Assets/XavierGame.PNG", title: "Misty setps", medium: "Digital", desc: "Digital piece, made as a backdrop for a game I have in the making."},
+        { type: "Ill", img: "src/ArtPage/Assets/Dreamland.jpg", title: "Three Pines", medium: "Watercolour", desc: "Digital piece, made as a backdrop for a game I have in the making."},
+        { type: "Ill", img: "src/ArtPage/Assets/Star.png", title: "How Stars are Born", medium: "Digital", desc: "Digital piece, made as a backdrop for a game I have in the making."},
+        { type: "Ill", img: "src/ArtPage/Assets/DreamKin.jpg", title: "Dream Land", medium: "Digital", desc: "Digital piece, made as a backdrop for a game I have in the making."},
+        { type: "Ill", img: "src/ArtPage/Assets/Star.png", title: "How Stars are Born", medium: "Digital", desc: "Digital piece, made as a backdrop for a game I have in the making."},
     ]
 
-    //create images and add to 
-  for (let j = 0; j < artIll.length; j++) {
+    const col0 = []
+    const col1 = []
+    const col2 = []
+    const col3 = []
 
-    const currArt = artIll[j];
-
-    let img = document.createElement('img');
-            img.src = currArt.img;
-            img.style.width = "100%";
-            img.title = currArt.title;
-            //img.medium = currArt.medium; 
-            //img.desc = currArt.desc;
-            //img.addEventListener('click', PopOver);
-            //img.addEventListener('mouseover', Blur);
-            //img.addEventListener('mouseout', BlurOff);
-            //document.getElementById("Ill").children[j % 4].appendChild(img);
-
-  }
+    for (let i = 0; i < artIll.length; i++) {
+        // Put in correct container/ sorting imgs into containers
+        if (i % 4 == 0)
+        {
+            col0.push(<img src={artIll[i].img} alt={artIll[i].title} width="100%" />);
+        }
+        if (i % 4 == 1)
+        {
+            col1.push(<img src={artIll[i].img} alt={artIll[i].title} width="100%" />);
+        }
+        if (i % 4 == 2)
+        {
+            col2.push(<img src={artIll[i].img} alt={artIll[i].title} width="100%" />);
+        }
+        if (i % 4 == 3)
+        {
+            col3.push(<img src={artIll[i].img} alt={artIll[i].title} width="100%" />);
+        }
+    }
 
     return (
         <>
+        <div> 
+            <h3> Illustration </h3>
+            <p>London is the capital city of England.</p>
+
+            <div className="row" id="Ill">
+                <Col imgs={col0}/> 
+                <Col imgs={col1}/>
+                <Col imgs={col2}/>
+                <Col imgs={col3}/>
+            </div>
+        </div>
+
+
+
+
+
+
+        {/*Below works
         <div>
         <h3> Illustration </h3>
         <p>London is the capital city of England.</p>
@@ -81,9 +115,7 @@ function Gallery() {
 
         </div>
 
-
-
-
+        {*/}
         </>
 
 
