@@ -3,14 +3,12 @@
 //Have imgs actually save info about image
 
 import './ArtPage.css'
-import { useRef } from 'react';
 
-import React, { useState } from 'react';
-
-function Img({img}) {
+function Img({img, title, onImgClick, val}) {
+    
     return (
         <>
-        <img src={img} width="100%"></img>
+        <img src={img} alt={title} width="100%" onClick={onImgClick}></img>
         </>
     );
 }
@@ -36,6 +34,8 @@ function Gallery() {
         desc: string;
     }
 
+    //Main array where all Illustration arts will be put?
+    //Will keep track of all information too 
     const artIll: Art[] = [
         { type: "Ill", img: "src/ArtPage/Assets/XavierGame.PNG", title: "Misty setps", medium: "Digital", desc: "Digital piece, made as a backdrop for a game I have in the making."},
         { type: "Ill", img: "src/ArtPage/Assets/Dreamland.jpg", title: "Three Pines", medium: "Watercolour", desc: "Digital piece, made as a backdrop for a game I have in the making."},
@@ -49,16 +49,21 @@ function Gallery() {
         { type: "Ill", img: "src/ArtPage/Assets/Star.png", title: "How Stars are Born", medium: "Digital", desc: "Digital piece, made as a backdrop for a game I have in the making."},
     ]
 
+    //containers for each img 
     const col0 = []
     const col1 = []
     const col2 = []
     const col3 = []
 
+    function onImgClick() {
+
+    }
+
     for (let i = 0; i < artIll.length; i++) {
         // Put in correct container/ sorting imgs into containers
         if (i % 4 == 0)
         {
-            col0.push(<img src={artIll[i].img} alt={artIll[i].title} width="100%" />);
+            col0.push(<img src={artIll[i].img} alt={artIll[i].title} width="100%" onClick={onImgClick}/>);
         }
         if (i % 4 == 1)
         {
@@ -73,6 +78,9 @@ function Gallery() {
             col3.push(<img src={artIll[i].img} alt={artIll[i].title} width="100%" />);
         }
     }
+
+    //FOR FUTURE ME: say you want to find info from main array about an img use formula
+    //( row * 4) + col # = array pos 
 
     return (
         <>
