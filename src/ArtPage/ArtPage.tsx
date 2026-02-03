@@ -1,18 +1,25 @@
 //TO DO: 
-//Make images clickable
-//Have imgs actually save info about image
+//MAKE BLUR WHEN HOVERING OVER IMAGE
+//Make title appear over blurr?
 
 import './ArtPage.css'
 
-function Img({img, title, onImgClick, val}) {
-    
+//component that contains information about the image
+function Img({data}) {
+
+    //when clicked say title
+    function onImgClick() {
+    console.log(data.title)
+    }
+
     return (
         <>
-        <img src={img} alt={title} width="100%" onClick={onImgClick}></img>
+        <img src={data.img} alt={data.title} width="100%" onClick={ () => onImgClick()}/>
         </>
     );
 }
 
+//container for images
 function Col({imgs}) {
 
     return (
@@ -50,37 +57,30 @@ function Gallery() {
     ]
 
     //containers for each img 
-    const col0 = []
-    const col1 = []
-    const col2 = []
-    const col3 = []
-
-    function onImgClick() {
-
-    }
+    let col0 = []
+    let col1 = []
+    let col2 = []
+    let col3 = []
 
     for (let i = 0; i < artIll.length; i++) {
         // Put in correct container/ sorting imgs into containers
         if (i % 4 == 0)
         {
-            col0.push(<img src={artIll[i].img} alt={artIll[i].title} width="100%" onClick={onImgClick}/>);
+            col0.push(<Img data={artIll[i]}/>); 
         }
         if (i % 4 == 1)
         {
-            col1.push(<img src={artIll[i].img} alt={artIll[i].title} width="100%" />);
+            col1.push(<Img data={artIll[i]}/>);
         }
         if (i % 4 == 2)
         {
-            col2.push(<img src={artIll[i].img} alt={artIll[i].title} width="100%" />);
+            col2.push(<Img data={artIll[i]}/>);
         }
         if (i % 4 == 3)
         {
-            col3.push(<img src={artIll[i].img} alt={artIll[i].title} width="100%" />);
+            col3.push(<Img data={artIll[i]}/>);
         }
     }
-
-    //FOR FUTURE ME: say you want to find info from main array about an img use formula
-    //( row * 4) + col # = array pos 
 
     return (
         <>
@@ -95,35 +95,6 @@ function Gallery() {
                 <Col imgs={col3}/>
             </div>
         </div>
-
-
-
-
-
-
-        {/*Below works
-        <div>
-        <h3> Illustration </h3>
-        <p>London is the capital city of England.</p>
-
-        <div className="row" id="Ill">
-            <div className="column"> 
-                <img src="src/ArtPage/Assets/XavierGame.PNG" alt="Girl in a jacket" width="100%"></img>
-            </div>
-            <div className="column"> 
-                <img src="src/ArtPage/Assets/XavierGame.PNG" alt="Girl in a jacket" width="100%"></img>
-            </div>
-            <div className="column"> 
-                <img src="src/ArtPage/Assets/XavierGame.PNG" alt="Girl in a jacket" width="100%"></img>
-            </div>
-            <div className="column"> 
-                <img src="src/ArtPage/Assets/XavierGame.PNG" alt="Girl in a jacket" width="100%"></img>
-            </div>
-        </div>
-
-        </div>
-
-        {*/}
         </>
 
 
