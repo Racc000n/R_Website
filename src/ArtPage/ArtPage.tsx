@@ -12,9 +12,23 @@ function Img({data}) {
     console.log(data.title)
     }
 
+    const onImgEnter = (evt) => {
+    evt.currentTarget.firstElementChild.classList.add('blur'); 
+    evt.currentTarget.lastElementChild.classList.add("unhide");
+
+    }
+
+    const onImgLeave = (evt) => {
+    evt.currentTarget.firstElementChild.classList.remove('blur');  
+    evt.currentTarget.lastElementChild.classList.remove("unhide");
+    }
+
     return (
         <>
-        <img src={data.img} alt={data.title} width="100%" onClick={ () => onImgClick()}/>
+        <div className="img-container" onClick={ () => onImgClick() } onMouseEnter={onImgEnter} onMouseLeave={onImgLeave}> 
+        <img src={data.img} alt={data.title} width="100%" />
+            <h1 className="centered hide"> {data.title}</h1>
+        </div>
         </>
     );
 }
@@ -84,7 +98,7 @@ function Gallery() {
 
     return (
         <>
-        <div> 
+        <div className="gallery"> 
             <h3> Illustration </h3>
             <p>London is the capital city of England.</p>
 
