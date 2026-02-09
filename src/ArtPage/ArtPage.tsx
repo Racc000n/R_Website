@@ -3,13 +3,17 @@
 //Make title appear over blurr?
 
 import './ArtPage.css'
+import ArtInfo from './ArtInfo'; 
+import { BrowserRouter, Routes, Route, Link, useNavigate} from 'react-router-dom';
 
 //component that contains information about the image
-function Img({data}) {
+function Img({data, artId}) {
+    const navigate = useNavigate();
 
     //when clicked say title
     function onImgClick() {
-    console.log(data.title)
+    console.log(artId);
+    navigate(`/artpage/${artId}`); 
     }
 
     const onImgEnter = (evt) => {
@@ -58,16 +62,16 @@ function Gallery() {
     //Main array where all Illustration arts will be put?
     //Will keep track of all information too 
     const artIll: Art[] = [
-        { type: "Ill", img: "src/ArtPage/Assets/XavierGame.PNG", title: "Misty setps", medium: "Digital", desc: "Digital piece, made as a backdrop for a game I have in the making."},
-        { type: "Ill", img: "src/ArtPage/Assets/Dreamland.jpg", title: "Three Pines", medium: "Watercolour", desc: "Digital piece, made as a backdrop for a game I have in the making."},
-        { type: "Ill", img: "src/ArtPage/Assets/DreamKin.jpg", title: "Dream Land", medium: "Digital", desc: "Digital piece, made as a backdrop for a game I have in the making."},
-        { type: "Ill", img: "src/ArtPage/Assets/Star.png", title: "How Stars are Born", medium: "Digital", desc: "Digital piece, made as a backdrop for a game I have in the making."},
-        { type: "Ill", img: "src/ArtPage/Assets/DreamKin.jpg", title: "Dream Land", medium: "Digital", desc: "Digital piece, made as a backdrop for a game I have in the making."},
-        { type: "Ill", img: "src/ArtPage/Assets/XavierGame.PNG", title: "Misty setps", medium: "Digital", desc: "Digital piece, made as a backdrop for a game I have in the making."},
-        { type: "Ill", img: "src/ArtPage/Assets/Dreamland.jpg", title: "Three Pines", medium: "Watercolour", desc: "Digital piece, made as a backdrop for a game I have in the making."},
-        { type: "Ill", img: "src/ArtPage/Assets/Star.png", title: "How Stars are Born", medium: "Digital", desc: "Digital piece, made as a backdrop for a game I have in the making."},
-        { type: "Ill", img: "src/ArtPage/Assets/DreamKin.jpg", title: "Dream Land", medium: "Digital", desc: "Digital piece, made as a backdrop for a game I have in the making."},
-        { type: "Ill", img: "src/ArtPage/Assets/Star.png", title: "How Stars are Born", medium: "Digital", desc: "Digital piece, made as a backdrop for a game I have in the making."},
+        {type: "Ill", img: "src/ArtPage/Assets/XavierGame.PNG", title: "Misty setps", medium: "Digital", desc: "Digital piece, made as a backdrop for a game I have in the making."},
+        {type: "Ill", img: "src/ArtPage/Assets/Dreamland.jpg", title: "Three Pines", medium: "Watercolour", desc: "Digital piece, made as a backdrop for a game I have in the making."},
+        {type: "Ill", img: "src/ArtPage/Assets/DreamKin.jpg", title: "Dream Land", medium: "Digital", desc: "Digital piece, made as a backdrop for a game I have in the making."},
+        {type: "Ill", img: "src/ArtPage/Assets/Star.png", title: "How Stars are Born", medium: "Digital", desc: "Digital piece, made as a backdrop for a game I have in the making."},
+        {type: "Ill", img: "src/ArtPage/Assets/DreamKin.jpg", title: "Dream Land", medium: "Digital", desc: "Digital piece, made as a backdrop for a game I have in the making."},
+        {type: "Ill", img: "src/ArtPage/Assets/XavierGame.PNG", title: "Misty setps", medium: "Digital", desc: "Digital piece, made as a backdrop for a game I have in the making."},
+        {type: "Ill", img: "src/ArtPage/Assets/Dreamland.jpg", title: "Three Pines", medium: "Watercolour", desc: "Digital piece, made as a backdrop for a game I have in the making."},
+        {type: "Ill", img: "src/ArtPage/Assets/Star.png", title: "How Stars are Born", medium: "Digital", desc: "Digital piece, made as a backdrop for a game I have in the making."},
+        {type: "Ill", img: "src/ArtPage/Assets/DreamKin.jpg", title: "Dream Land", medium: "Digital", desc: "Digital piece, made as a backdrop for a game I have in the making."},
+        {type: "Ill", img: "src/ArtPage/Assets/Star.png", title: "How Stars are Born", medium: "Digital", desc: "Digital piece, made as a backdrop for a game I have in the making."},
     ]
 
     //containers for each img 
@@ -80,19 +84,19 @@ function Gallery() {
         // Put in correct container/ sorting imgs into containers
         if (i % 4 == 0)
         {
-            col0.push(<Img data={artIll[i]}/>); 
+            col0.push(<Img data={artIll[i]} artId={i} />); 
         }
         if (i % 4 == 1)
         {
-            col1.push(<Img data={artIll[i]}/>);
+            col1.push(<Img data={artIll[i]} artId={i} />);
         }
         if (i % 4 == 2)
         {
-            col2.push(<Img data={artIll[i]}/>);
+            col2.push(<Img data={artIll[i]} artId={i} />);
         }
         if (i % 4 == 3)
         {
-            col3.push(<Img data={artIll[i]}/>);
+            col3.push(<Img data={artIll[i]} artId={i} />);
         }
     }
 

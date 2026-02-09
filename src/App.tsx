@@ -1,4 +1,4 @@
-import ArtPage from './ArtPage/ArtPage'; 
+import ArtPage from './ArtPage/ArtPage';
 
 function App() {
   return <div> <ArtPage /> </div>
