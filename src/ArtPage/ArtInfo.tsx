@@ -1,7 +1,7 @@
 import './ArtInfo.css'
 import { useParams } from 'react-router-dom';
 import artIll from './ArtData.tsx'; 
-import img from "/src/ArtPage/Assets/XavierGame.PNG"; 
+import {Link} from "react-router-dom"
 
 
 function Img({data, artId}) {
@@ -9,7 +9,7 @@ function Img({data, artId}) {
     return (
         <>
         <div> 
-        <img src={img} alt={data.title} width="100%" />
+        <img src={data.img} alt={data.title} width="100%" />
         </div>
         </>
     );
@@ -21,12 +21,15 @@ function ArtInfo() {
     const id = params.artId;
     const data = artIll[id];
 
-    console.log(data.img); 
+    window.scrollTo(0, 0);
 
     return (
         <>
         <div className="container"> 
         <div className="info"> 
+        <Link to={"/"}> 
+        <button> Go Back </button>
+        </Link>
         <h2> Title: {data.title} </h2>
         <h2> Medium: {data.medium} </h2>
         <h2> Description: {data.desc} </h2>

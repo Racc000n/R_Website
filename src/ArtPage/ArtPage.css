@@ -28,9 +28,9 @@ body:has(.requires-no-scroll) {
 }
 
 .gallery {
-  margin-left: 40px;
-  margin-right: 40px;
-  margin-bottom: 20px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 3%;
 }
 
 /* Create two equal columns that sits next to each other */
