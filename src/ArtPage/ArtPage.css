@@ -1,80 +1,15 @@
-/*GRID THINGSSS */ 
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-body:has(.requires-no-scroll) {
-  overflow: hidden;
-}
-
-
-.header {
-  text-align: center;
-  padding: 32px;
-}
-
-.row {
-  display: -ms-flexbox; /* IE 10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE 10 */
-  flex-wrap: wrap;
-  padding: 0 4px;
-}
-
-.gallery {
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-bottom: 3%;
-}
-
-/* Create two equal columns that sits next to each other */
-.column {
-  -ms-flex: 50%; /* IE 10 */
-  flex: 50%;
-  padding: 0 4px;
-}
-
-.column img {
-  
-  vertical-align: middle;
-}
-
-/* Style the buttons */
-.btn {
-  border: none;
-  outline: none;
-  padding: 10px 16px;
-  background-color: #f1f1f1;
-  cursor: pointer;
-  font-size: 18px;
-}
-
-.btn:hover {
-  background-color: #ddd;
-}
-
-.btn.active {
-  background-color: #666;
-  color: white;
-}
-
-
-/* TAB OPTIONS FOR ART TYPE*/
 /* Style the tab */
-.tab {
+.bloc-tabs {
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: #f1f1f1;
 }
 
-/* Style the buttons that are used to open the tab content */
-.tab button {
+.tabs {
+  
+}
+/* Style the buttons inside the tab */
+.bloc-tabs div {
   background-color: inherit;
   float: left;
   border: none;
@@ -82,15 +17,16 @@ body:has(.requires-no-scroll) {
   cursor: pointer;
   padding: 14px 16px;
   transition: 0.3s;
+  font-size: 17px;
 }
 
 /* Change background color of buttons on hover */
-.tab button:hover {
+.bloc-tabs div:hover {
   background-color: #ddd;
 }
 
 /* Create an active/current tablink class */
-.tab button.active {
+.bloc-tabs div.active-tabs {
   background-color: #ccc;
 }
 
@@ -102,74 +38,14 @@ body:has(.requires-no-scroll) {
   border-top: none;
 }
 
-
-.free {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 60%;
-  width: 40%;
-  background-color: white; 
-  visibility: hidden; 
-   z-index: 2;
+.block {
+  display: block; 
 }
 
-.blur {
-  filter: blur(5px);
+.content {
+  display: none; 
 }
 
-.img-container{
-
-  margin-top: 8px;
-  position: relative;
-
-  display: block;
-
-  overflow: hidden;
-  
-
+.active-content {
+  display: block; 
 }
-
-.centered {
-  position: absolute;
-  background-size: contain;
-
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white; 
-  mix-blend-mode: difference;
-  filter: contrast(100%);
-}
-
-
-.hide {
-  visibility: hidden;
-}
-
-.unhide {
-  visibility: visible;
-}
-
-
-/*========================================================================== */ 
-/* CHANGE VIEW  DEPENDING ON SCREEN TYPE*/
- @media (max-width: 700px) {
-    .column {
-    -ms-flex: 100%; /* IE 10 */
-    flex: 100%;
-    padding: 0 4px;
-    }
-
- } 
- 
-   @media (min-width: 1024px) {
-    .column {
-    -ms-flex: 25%; /* IE 10 */
-    flex: 25%;
-    padding: 0 4px;
-    }
-
- } 
-

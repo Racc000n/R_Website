@@ -1,101 +1,61 @@
-//TO DO: 
-//MAKE BLUR WHEN HOVERING OVER IMAGE
-//Make title appear over blurr?
-
 import './ArtPage.css'
 import { BrowserRouter, Routes, Route, Link, useNavigate} from 'react-router-dom';
-import artIll from './ArtData.tsx'; 
+import Gallery from './ArtTab.tsx';
 
-//component that contains information about the image
-function Img({data, artId}) {
-    const navigate = useNavigate();
+import {useState} from "react"; 
 
-    //when clicked say title
-    function onImgClick() {
-    console.log(artId);
-    navigate(`/artpage/${artId}`); 
-    }
 
-    const onImgEnter = (evt) => {
-    evt.currentTarget.firstElementChild.classList.add('blur'); 
-    evt.currentTarget.lastElementChild.classList.add("unhide");
+function ArtPage() {
+    const [toggleState, setToggleState] = useState(1);
 
-    }
-
-    const onImgLeave = (evt) => {
-    evt.currentTarget.firstElementChild.classList.remove('blur');  
-    evt.currentTarget.lastElementChild.classList.remove("unhide");
+    const toggleTab = (index) => {
+        setToggleState(index);
     }
 
     return (
         <>
-        <div className="img-container" onClick={ () => onImgClick() } onMouseEnter={onImgEnter} onMouseLeave={onImgLeave}> 
-        <img src={data.img} alt={data.title} width="100%" />
-            <h1 className="centered hide"> {data.title}</h1>
-        </div>
-        </>
-    );
-}
 
-//container for images
-function Col({imgs}) {
+        <h2>Art</h2>
+        <p>Which constolation should we explore?</p>
 
-    return (
-        <> 
-        <div className="column"> 
-                {imgs}
-        </div>
-        </>
-    );
-}
+        <div className="container"/>
 
-    
-
-
-function Gallery() {
-    //containers for each img 
-    let col0 = []
-    let col1 = []
-    let col2 = []
-    let col3 = []
-
-    for (let i = 0; i < artIll.length; i++) {
-        // Put in correct container/ sorting imgs into containers
-        if (i % 4 == 0)
-        {
-            col0.push(<Img data={artIll[i]} artId={i} />); 
-        }
-        if (i % 4 == 1)
-        {
-            col1.push(<Img data={artIll[i]} artId={i} />);
-        }
-        if (i % 4 == 2)
-        {
-            col2.push(<Img data={artIll[i]} artId={i} />);
-        }
-        if (i % 4 == 3)
-        {
-            col3.push(<Img data={artIll[i]} artId={i} />);
-        }
-    }
-
-    return (
-        <>
-        <div className="gallery"> 
-            <h3> Illustration </h3>
-            <p>London is the capital city of England.</p>
-
-            <div className="row" id="Ill">
-                <Col imgs={col0}/> 
-                <Col imgs={col1}/>
-                <Col imgs={col2}/>
-                <Col imgs={col3}/>
+            <div className="bloc-tabs">
+                <div className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
+                 onClick={() => toggleTab(1)}
+                 >All</div>
+                <div className={toggleState === 2? "tabs active-tabs" : "tabs"}
+                onClick={() => toggleTab(2)}
+                > Illustration</div>
+                <div className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
+                 onClick={() => toggleTab(3)}
+                 > Characters</div>
+                <div className={toggleState === 4 ? "tabs active-tabs" : "tabs"}
+                 onClick={() => toggleTab(4)}
+                 >Study</div>
             </div>
-        </div>
+
+            <div className="content-tabs">
+                <div className={toggleState === 1 ? "content active-content" : "content"}>
+                    <Gallery cat={"all"}/>
+                </div>
+
+                <div className={toggleState === 2 ? "content active-content" : "content"}>
+                    <Gallery cat={"Ill"}/>
+                </div>
+
+                <div className={toggleState === 3 ? "content active-content" : "content"}>
+                    <Gallery cat={"Ch"}/>
+                </div>
+
+                <div className={toggleState === 4 ? "content active-content" : "content"}>
+                    <Gallery cat={"St"}/>
+                </div>
+
+            <div/>
+        </div> 
         </>
-
-
     );
 }
 
-export default Gallery;
+export default ArtPage;
