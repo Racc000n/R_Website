@@ -1,17 +1,64 @@
+.idk {
+    background-color: #fff;
+    background-image:
+        url("/src/ArtPage/Assets/stars/Starbtl.png"), 
+        url("/src/ArtPage/Assets/stars/Starbbr.png"), 
+        url("/src/ArtPage/Assets/stars/Starbbl.png"), 
+        url("/src/ArtPage/Assets/stars/Starbtr.png"); 
+    background-position: 
+        left top,
+        right bottom, 
+        left bottom, 
+        right top;  /* Set positioning for corner 1 */
+    background-repeat: 
+      no-repeat, 
+      no-repeat,
+      no-repeat,
+      no-repeat; 
+    background-size: 
+      40%; 
+
+
+  padding-bottom: 2%;
+
+} 
 /* Style the tab */
 .bloc-tabs {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
+  /*overflow: hidden;*/ 
+  /*border: 1px solid #ccc;
+  background-color: #f1f1f1; */
+
+  display: flex;         /* Enables flexbox layout */
+  justify-content: center; /* Horizontally centers the tabs */
+  flex-direction: row;
+
+  margin-left: 5%;
+  margin-right: 5%;
+
 }
 
 .tabs {
-  
+    position: relative;
+}
+
+.tabs img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.tabs p {
+  z-index: 100;
+}
+.c {
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align: center;
 }
 /* Style the buttons inside the tab */
 .bloc-tabs div {
   background-color: inherit;
-  float: left;
   border: none;
   outline: none;
   cursor: pointer;
@@ -20,22 +67,31 @@
   font-size: 17px;
 }
 
+.bloc-tabs img {
+  visibility: hidden;
+}
+
+
 /* Change background color of buttons on hover */
 .bloc-tabs div:hover {
-  background-color: #ddd;
+  /*background-color: #ddd;*/ 
+  text-decoration: underline;
+}
+.bloc-tabs div:hover img{
+  /*background-color: #ddd;*/ 
+  visibility: visible;
 }
 
 /* Create an active/current tablink class */
 .bloc-tabs div.active-tabs {
-  background-color: #ccc;
+  /*background-color: #ccc; */ 
+  text-decoration: underline;
 }
 
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
+/* Create an active/current tablink class */
+.bloc-tabs div.active-tabs img{
+  /*background-color: #ccc; */ 
+  visibility: visible;
 }
 
 .block {

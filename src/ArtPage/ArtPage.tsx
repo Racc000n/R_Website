@@ -15,24 +15,44 @@ function ArtPage() {
     return (
         <>
 
+        <div className="idk">
+
+        <div className="c">
+
         <h2>Art</h2>
         <p>Which constolation should we explore?</p>
 
-        <div className="container"/>
+        </div>
 
             <div className="bloc-tabs">
                 <div className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
-                 onClick={() => toggleTab(1)}
-                 >All</div>
+                 onClick={() => toggleTab(1)}>     
+
+                 <img src={"/src/ArtPage/Assets/stars/Star1.png"} width="100%" />
+                 <p>All</p>
+                 
+                 </div>
                 <div className={toggleState === 2? "tabs active-tabs" : "tabs"}
-                onClick={() => toggleTab(2)}
-                > Illustration</div>
+                onClick={() => toggleTab(2)}>
+
+                <img src={"/src/ArtPage/Assets/stars/Star1.png"} width="100%" />
+                 <p>Illustration</p>
+                    
+                </div>
                 <div className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
-                 onClick={() => toggleTab(3)}
-                 > Characters</div>
+                 onClick={() => toggleTab(3)} >
+
+                <img src={"/src/ArtPage/Assets/stars/Star1.png"} width="100%" />
+                 <p>Character</p>
+                 
+                 </div>
                 <div className={toggleState === 4 ? "tabs active-tabs" : "tabs"}
-                 onClick={() => toggleTab(4)}
-                 >Study</div>
+                 onClick={() => toggleTab(4)} > 
+
+                <img src={"/src/ArtPage/Assets/stars/Star1.png"} width="100%" />
+                 <p>Study</p>
+
+                </div>
             </div>
 
             <div className="content-tabs">
@@ -53,6 +73,7 @@ function ArtPage() {
                 </div>
 
             <div/>
+        </div> 
         </div> 
         </>
     );

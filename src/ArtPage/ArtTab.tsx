@@ -46,6 +46,18 @@ function Col({imgs}) {
 }
 
 function Gallery({cat}) {
+
+    const star = ["/src/ArtPage/Assets/stars/Star1.png", 
+                    "/src/ArtPage/Assets/stars/Star2.png",
+                    "/src/ArtPage/Assets/stars/Star3.png",
+                    "/src/ArtPage/Assets/stars/Star4.png",
+                    "/src/ArtPage/Assets/stars/Star5.png",
+                    "/src/ArtPage/Assets/stars/Star6.png"
+    ];  
+
+
+
+
     //containers for each img 
     let col0 = []
     let col1 = []
@@ -61,19 +73,46 @@ function Gallery({cat}) {
         // Put in correct container/ sorting imgs into containers
             if (col % 4 == 0)
             {
-                col0.push(<Img data={artIll[i]} artId={i} />);    
+                if(i % 3 != 0)
+                {
+                    col0.push(<Img data={artIll[i]} artId={i} />); 
+                }
+                else{
+                    col0.push(<img src={star[0]} width="100%" />);
+                }
+                   
             }
             if (col % 4 == 1)
             {
-                col1.push(<Img data={artIll[i]} artId={i} />);
+                if(i % 3 != 0)
+                {
+                    col1.push(<Img data={artIll[i]} artId={i} />);
+                }
+                else {
+                    col1.push(<img src={star[1]} width="100%" />);
+                }
+                
             }
             if (col % 4 == 2)
             {
-                col2.push(<Img data={artIll[i]} artId={i} />);
+                if(i % 3 != 0)
+                {
+                    col2.push(<Img data={artIll[i]} artId={i} />);
+                }
+                else {
+                    col2.push(<img src={star[2]} width="100%" />);
+                }
+                
             }
             if (col % 4 == 3)
             {
-                col3.push(<Img data={artIll[i]} artId={i} />);
+                if(i % 3 != 0)
+                {
+                    col3.push(<Img data={artIll[i]} artId={i} />);
+                }
+                else {
+                    col3.push(<img src={star[3]} width="100%" />);
+                }
             }
             col++; 
         }
