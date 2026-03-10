@@ -37,6 +37,18 @@
 
 }
 
+.bloc-tabs img {
+  z-index: 10;
+}
+
+.bloc-tabs p {
+  position: relative;
+  z-index: 100;
+  font-weight: bold;
+  visibility: hidden;
+}
+
+
 .tabs {
     position: relative;
 }
@@ -48,9 +60,6 @@
     transform: translate(-50%, -50%);
 }
 
-.tabs p {
-  z-index: 100;
-}
 .c {
   margin-left: 5%;
   margin-right: 5%;
@@ -67,15 +76,18 @@
   font-size: 17px;
 }
 
-.bloc-tabs img {
-  visibility: hidden;
+.bloc-tabs img.line {
+  /*visibility: hidden;*/ 
+    position: relative;
+    left: 50%;
+    z-index: 6;
 }
 
-
 /* Change background color of buttons on hover */
-.bloc-tabs div:hover {
+.bloc-tabs div:hover p {
   /*background-color: #ddd;*/ 
   text-decoration: underline;
+  visibility: visible;
 }
 .bloc-tabs div:hover img{
   /*background-color: #ddd;*/ 
@@ -83,9 +95,10 @@
 }
 
 /* Create an active/current tablink class */
-.bloc-tabs div.active-tabs {
+.bloc-tabs div.active-tabs p{
   /*background-color: #ccc; */ 
   text-decoration: underline;
+  visibility: visible;
 }
 
 /* Create an active/current tablink class */

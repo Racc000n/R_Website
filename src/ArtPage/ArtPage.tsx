@@ -25,33 +25,35 @@ function ArtPage() {
         </div>
 
             <div className="bloc-tabs">
+
+                {/*<img className="line" src={"/src/ArtPage/Assets/tabs/line.png"} width="50%" /> */} 
+
                 <div className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
                  onClick={() => toggleTab(1)}>     
-
-                 <img src={"/src/ArtPage/Assets/stars/Star1.png"} width="100%" />
+            
+                 <img src={"/src/ArtPage/Assets/tabs/star1.png"} width="150%" />
                  <p>All</p>
-                 
                  </div>
+
                 <div className={toggleState === 2? "tabs active-tabs" : "tabs"}
                 onClick={() => toggleTab(2)}>
 
-                <img src={"/src/ArtPage/Assets/stars/Star1.png"} width="100%" />
+                <img src={"/src/ArtPage/Assets/tabs/star2.png"} width="70%" />
                  <p>Illustration</p>
-                    
                 </div>
+
                 <div className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
                  onClick={() => toggleTab(3)} >
 
-                <img src={"/src/ArtPage/Assets/stars/Star1.png"} width="100%" />
+                <img src={"/src/ArtPage/Assets/tabs/star3.png"} width="70%" />
                  <p>Character</p>
-                 
                  </div>
+
                 <div className={toggleState === 4 ? "tabs active-tabs" : "tabs"}
                  onClick={() => toggleTab(4)} > 
 
-                <img src={"/src/ArtPage/Assets/stars/Star1.png"} width="100%" />
+                <img src={"/src/ArtPage/Assets/tabs/star4.png"} width="100%" />
                  <p>Study</p>
-
                 </div>
             </div>
 
