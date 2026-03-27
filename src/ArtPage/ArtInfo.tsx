@@ -17,6 +17,8 @@ function Img({data, artId}) {
 
 function ArtInfo() {
 
+    
+
     const params = useParams(); 
     const id = params.artId;
     const data = artIll[id];
@@ -25,6 +27,7 @@ function ArtInfo() {
 
     return (
         <>
+        <div className="idkimg">
         <div className="container"> 
         <div className="info"> 
         <Link to={"/"}> 
@@ -39,6 +42,7 @@ function ArtInfo() {
         <Img data= {data} artId={id}/> 
         </div>
         </div> 
+        </div>
         </>
 
         

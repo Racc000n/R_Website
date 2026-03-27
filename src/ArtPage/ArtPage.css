@@ -39,6 +39,11 @@
 
 .bloc-tabs img {
   z-index: 10;
+  visibility: visible;
+}
+
+.bloc-tabs img.h {
+  visibility: hidden;
 }
 
 .bloc-tabs p {
@@ -89,21 +94,20 @@
   text-decoration: underline;
   visibility: visible;
 }
-.bloc-tabs div:hover img{
+.bloc-tabs div:hover img.h {
   /*background-color: #ddd;*/ 
   visibility: visible;
+}
+
+.bloc-tabs div:hover img {
+  /*background-color: #ddd;*/ 
+  visibility: hidden;
 }
 
 /* Create an active/current tablink class */
 .bloc-tabs div.active-tabs p{
   /*background-color: #ccc; */ 
   text-decoration: underline;
-  visibility: visible;
-}
-
-/* Create an active/current tablink class */
-.bloc-tabs div.active-tabs img{
-  /*background-color: #ccc; */ 
   visibility: visible;
 }
 

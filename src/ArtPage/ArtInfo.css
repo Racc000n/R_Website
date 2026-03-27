@@ -1,4 +1,16 @@
+
+.idkimg {
+    background-color: #fff;
+    background-image: url("/src/ArtPage/Assets/stars/starimg_bg.png");
+    background-position: top left;
+    background-repeat: no-repeat; 
+    background-size : 100% auto; 
+  padding-bottom: 2%;
+}
+*/
+
 .info {
+    background-color: #fff;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;

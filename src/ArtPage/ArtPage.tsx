@@ -32,6 +32,7 @@ function ArtPage() {
                  onClick={() => toggleTab(1)}>     
             
                  <img src={"/src/ArtPage/Assets/tabs/star1.png"} width="150%" />
+                 <img className="h" src={"/src/ArtPage/Assets/tabs/star1_hover.gif"} width="150%"/>
                  <p>All</p>
                  </div>
 
@@ -39,6 +40,7 @@ function ArtPage() {
                 onClick={() => toggleTab(2)}>
 
                 <img src={"/src/ArtPage/Assets/tabs/star2.png"} width="70%" />
+                <img className="h" src={"/src/ArtPage/Assets/tabs/star2_hover.gif"} width="70%"/>
                  <p>Illustration</p>
                 </div>
 
@@ -46,6 +48,7 @@ function ArtPage() {
                  onClick={() => toggleTab(3)} >
 
                 <img src={"/src/ArtPage/Assets/tabs/star3.png"} width="70%" />
+                <img className="h" src={"/src/ArtPage/Assets/tabs/star3_hover.gif"} width="70%"/>
                  <p>Character</p>
                  </div>
 
@@ -53,6 +56,7 @@ function ArtPage() {
                  onClick={() => toggleTab(4)} > 
 
                 <img src={"/src/ArtPage/Assets/tabs/star4.png"} width="100%" />
+                <img className="h" src={"/src/ArtPage/Assets/tabs/star4_hover.gif"} width="100%"/>
                  <p>Study</p>
                 </div>
             </div>
