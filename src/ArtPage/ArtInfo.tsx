@@ -1,3 +1,6 @@
+//TODO: 
+//1. Make background image for info 
+
 import './ArtInfo.css'
 import { useParams } from 'react-router-dom';
 import artIll from './ArtData.tsx'; 
@@ -29,6 +32,7 @@ function ArtInfo() {
         <>
         <div className="idkimg">
         <div className="container"> 
+        
         <div className="info"> 
         <Link to={"/"}> 
         <button> Go Back </button>
@@ -41,6 +45,7 @@ function ArtInfo() {
         <div className="img"> 
         <Img data= {data} artId={id}/> 
         </div>
+        
         </div> 
         </div>
         </>

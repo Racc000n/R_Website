@@ -55,9 +55,6 @@ function Gallery({cat}) {
                     "/src/ArtPage/Assets/stars/Star6.png"
     ];  
 
-
-
-
     //containers for each img 
     let col0 = []
     let col1 = []
@@ -66,58 +63,64 @@ function Gallery({cat}) {
 
 
     let col = 0; 
+    let j = 0; 
 
-    for (let i = 0; i < artIll.length; i++) {
-        if(artIll[i].type == cat || cat == "all")
+    for (let i = 0; i < artIll.length; i++){
+    
+        if ( artIll[i].type == cat ||  cat == "all")
         {
+            console.log(i); 
         // Put in correct container/ sorting imgs into containers
             if (col % 4 == 0)
             {
-                if(i % 3 != 0)
+                if(j % 3 != 0)
                 {
                     col0.push(<Img data={artIll[i]} artId={i} />); 
                 }
                 else{
                     col0.push(<img src={star[0]} width="100%" />);
+                    i--;
                 }
                    
             }
             if (col % 4 == 1)
             {
-                if(i % 3 != 0)
+                if(j % 3 != 0)
                 {
                     col1.push(<Img data={artIll[i]} artId={i} />);
                 }
                 else {
                     col1.push(<img src={star[1]} width="100%" />);
+                    i--;
                 }
                 
             }
             if (col % 4 == 2)
             {
-                if(i % 3 != 0)
+                if(j % 3 != 0)
                 {
                     col2.push(<Img data={artIll[i]} artId={i} />);
                 }
                 else {
                     col2.push(<img src={star[2]} width="100%" />);
+                    i--;
                 }
                 
             }
             if (col % 4 == 3)
             {
-                if(i % 3 != 0)
+                if(j % 3 != 0)
                 {
                     col3.push(<Img data={artIll[i]} artId={i} />);
                 }
                 else {
                     col3.push(<img src={star[3]} width="100%" />);
+                    i--;
                 }
             }
             col++; 
+            j++; 
         }
-        
-        
     }
 
     return (

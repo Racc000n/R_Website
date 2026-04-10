@@ -67,8 +67,6 @@ body:has(.requires-no-scroll) {
   position: relative;
   display: block;
   overflow: hidden;
-  
-
 }
 
 .centered {
@@ -82,7 +80,7 @@ body:has(.requires-no-scroll) {
   mix-blend-mode: difference;
   filter: contrast(100%);
 
-  font-size: 2.5vw;
+  font-size: 5.2vw;
 }
 
 .centered h1{
@@ -110,6 +108,21 @@ body:has(.requires-no-scroll) {
     padding: 0 4px;
     }
 
+    .centered {
+    position: absolute;
+    background-size: contain;
+
+    top: 0;
+    left: 10%;
+  
+    color: white; 
+    mix-blend-mode: difference;
+    filter: contrast(100%);
+
+    font-size: 10vw;
+}
+
+
  } 
  
    @media (min-width: 1024px) {
@@ -118,6 +131,21 @@ body:has(.requires-no-scroll) {
     flex: 25%;
     padding: 0 4px;
     }
+
+
+    .centered {
+    position: absolute;
+    background-size: contain;
+
+    top: 0;
+    left: 10%;
+  
+    color: white; 
+    mix-blend-mode: difference;
+    filter: contrast(100%);
+
+    font-size: 2.5vw;
+}
 
  } 
 
