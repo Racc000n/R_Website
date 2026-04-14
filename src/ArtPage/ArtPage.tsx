@@ -20,7 +20,7 @@ function ArtPage() {
         <div className="c">
 
         <h2>Art</h2>
-        <p>Which constolation should we explore?</p>
+        <p>Which constellation should we explore?</p>
 
         </div>
 
