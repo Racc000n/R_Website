@@ -56,12 +56,12 @@ function Col({imgs}: {imgs: any}) {
 
 function Gallery({cat}: {cat: any}) {
 
-    const star = ["/src/ArtPage/Assets/stars/Star1.png", 
-                    "/src/ArtPage/Assets/stars/Star2.png",
-                    "/src/ArtPage/Assets/stars/Star3.png",
-                    "/src/ArtPage/Assets/stars/Star4.png",
-                    "/src/ArtPage/Assets/stars/Star5.png",
-                    "/src/ArtPage/Assets/stars/Star6.png"
+    const star = ["/R_Website/src/ArtPage/Assets/stars/Star1.png", 
+                    "/R_Website/src/ArtPage/Assets/stars/Star2.png",
+                    "/R_Website/src/ArtPage/Assets/stars/Star3.png",
+                    "/R_Website/src/ArtPage/Assets/stars/Star4.png",
+                    "/R_Website/src/ArtPage/Assets/stars/Star5.png",
+                    "/R_Website/src/ArtPage/Assets/stars/Star6.png"
     ];  
 
     //containers for each img 
