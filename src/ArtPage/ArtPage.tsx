@@ -1,14 +1,12 @@
 import './ArtPage.css'
-import { BrowserRouter, Routes, Route, Link, useNavigate} from 'react-router-dom';
 import Gallery from './ArtTab.tsx';
 
 import {useState} from "react"; 
 
-
 function ArtPage() {
     const [toggleState, setToggleState] = useState(1);
 
-    const toggleTab = (index) => {
+    const toggleTab = (index : any) => {
         setToggleState(index);
     }
 

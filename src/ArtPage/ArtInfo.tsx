@@ -6,8 +6,15 @@ import { useParams } from 'react-router-dom';
 import artIll from './ArtData.tsx'; 
 import {Link} from "react-router-dom"
 
+    interface Art {
+        type: string;
+        img: string;
+        title: string;
+        medium: string;
+        desc: string;
+    }
 
-function Img({data, artId}) {
+function Img({data}: {data : Art}) {
 
     return (
         <>
@@ -20,10 +27,9 @@ function Img({data, artId}) {
 
 function ArtInfo() {
 
-    
-
     const params = useParams(); 
     const id = params.artId;
+    //@ts-ignore
     const data = artIll[id];
 
     window.scrollTo(0, 0);
@@ -32,7 +38,6 @@ function ArtInfo() {
         <>
         <div className="idkimg">
         <div className="container"> 
-        
         <div className="info"> 
         <Link to={"/"}> 
         <button> Go Back </button>
@@ -43,9 +48,8 @@ function ArtInfo() {
         </div>
 
         <div className="img"> 
-        <Img data= {data} artId={id}/> 
+        <Img data= {data}/> 
         </div>
-        
         </div> 
         </div>
         </>

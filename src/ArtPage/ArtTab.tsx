@@ -1,9 +1,18 @@
 import './ArtTab.css'
-import { BrowserRouter, Routes, Route, Link, useNavigate} from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import artIll from './ArtData.tsx'; 
 
+    interface Art {
+        type: string;
+        img: string;
+        title: string;
+        medium: string;
+        desc: string;
+    }
+
+
 //component that contains information about the image
-function Img({data, artId}) {
+function Img({data, artId}: {data : Art, artId : Number}) {
     const navigate = useNavigate();
 
     //when clicked say title
@@ -12,13 +21,13 @@ function Img({data, artId}) {
     navigate(`/artpage/${artId}`); 
     }
 
-    const onImgEnter = (evt) => {
+    const onImgEnter = (evt : any) => {
     evt.currentTarget.firstElementChild.classList.add('blur'); 
     evt.currentTarget.lastElementChild.classList.add("unhide");
 
     }
 
-    const onImgLeave = (evt) => {
+    const onImgLeave = (evt : any) => {
     evt.currentTarget.firstElementChild.classList.remove('blur');  
     evt.currentTarget.lastElementChild.classList.remove("unhide");
     }
@@ -34,7 +43,7 @@ function Img({data, artId}) {
 }
 
 //container for images
-function Col({imgs}) {
+function Col({imgs}: {imgs: any}) {
 
     return (
         <> 
@@ -45,7 +54,7 @@ function Col({imgs}) {
     );
 }
 
-function Gallery({cat}) {
+function Gallery({cat}: {cat: any}) {
 
     const star = ["/src/ArtPage/Assets/stars/Star1.png", 
                     "/src/ArtPage/Assets/stars/Star2.png",
