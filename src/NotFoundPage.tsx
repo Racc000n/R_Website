@@ -6,7 +6,7 @@ function NotFound() {
         <>
         <div> 
         <h1> potatoes </h1>
-        <Link to={"/"}> 
+        <Link to={"/R_Website/"}> 
         <button> Go Back </button>
         </Link>
         </div>

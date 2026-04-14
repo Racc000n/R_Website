@@ -9,9 +9,9 @@ import NotFound from './NotFoundPage.tsx'
 import { createBrowserRouter, RouterProvider} from 'react-router-dom'; 
 
 const router = createBrowserRouter([
-  {path: "/", element: <App/>,}, 
-  {path: "/artpage", element: <ArtPage/>},
-  {path: "/artpage/:artId", element: <ArtInfo/>}, 
+  {path: "/R_Website/", element: <App/>,}, 
+  {path: "/R_Website/artpage", element: <ArtPage/>},
+  {path: "/R_Website/artpage/:artId", element: <ArtInfo/>}, 
   {path: "*", element: <NotFound/>}
     
 ]); 

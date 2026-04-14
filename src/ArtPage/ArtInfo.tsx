@@ -39,7 +39,7 @@ function ArtInfo() {
         <div className="idkimg">
         <div className="container"> 
         <div className="info"> 
-        <Link to={"/artpage"}> 
+        <Link to={"/R_Website/artpage"}> 
         <button> Go Back </button>
         </Link>
         <h2> Title: {data.title} </h2>

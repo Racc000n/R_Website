@@ -18,7 +18,7 @@ function Img({data, artId}: {data : Art, artId : Number}) {
     //when clicked say title
     function onImgClick() {
     console.log(artId);
-    navigate(`/artpage/${artId}`); 
+    navigate(`/R_Website/artpage/${artId}`); 
     }
 
     const onImgEnter = (evt : any) => {

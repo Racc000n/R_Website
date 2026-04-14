@@ -6,7 +6,7 @@ function App() {
   
   <div> 
     
-    <Link to={"/artpage"}> 
+    <Link to={"/R_Website/artpage"}> 
       <button> Go To Art </button>
       </Link>
   </div>
