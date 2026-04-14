@@ -15,7 +15,7 @@
     //Main array where all Illustration arts will be put?
     //Will keep track of all information too 
     const artIll: Art[] = [
-        {type: "Ch", img: "/R_Website/src/ArtPage/Assets/Aiko24.jpg", title: "Yearly Sketch", medium: "Watercolour", desc: "A yearly sketch I do to see how much I have improved in character drawing."},
+        {type: "Ch", img: "/src/ArtPage/Assets/Aiko24.jpg", title: "Yearly Sketch", medium: "Watercolour", desc: "A yearly sketch I do to see how much I have improved in character drawing."},
         {type: "Ch", img: "/R_Website/src/ArtPage/Assets/AngelLaurent.jpg", title: "Half a Contract", medium: "Digital", desc: "Two of my original characters."},
         {type: "Ill", img: "/R_Website/src/ArtPage/Assets/BellTree.jpg", title: "Bell Tree", medium: "Digital", desc: "Concept art for a game."},
         {type: "Ill", img: "/R_Website/src/ArtPage/Assets/BlueJack.jpg", title: "Wizard", medium: "Digital", desc: "Art of an original character."},
