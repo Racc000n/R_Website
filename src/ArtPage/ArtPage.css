@@ -1,10 +1,10 @@
 .idk {
     background-color: #fff;
     background-image:
-        url("/R_Website/src/ArtPage/Assets/stars/Starbtl.png"), 
-        url("/R_Website/src/ArtPage/Assets/stars/Starbbr.png"), 
-        url("/R_Website/src/ArtPage/Assets/stars/Starbbl.png"), 
-        url("/R_Website/src/ArtPage/Assets/stars/Starbtr.png"); 
+        url("/public/ArtPageAssets/stars/Starbtl.png"), 
+        url("/public/ArtPageAssets/stars/Starbbr.png"), 
+        url("/public/ArtPageAssets/stars/Starbbl.png"), 
+        url("/public/ArtPageAssets/stars/Starbtr.png"); 
     background-position: 
         left top,
         right bottom, 

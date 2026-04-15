@@ -1,7 +1,7 @@
 
 .idkimg {
     background-color: #fff;
-    background-image: url("R_Website/src/ArtPage/Assets/stars/starimg_bg.png") ;
+    background-image: url("/public/ArtPageAssets/stars/starimg_bg.png") ;
     background-position:  right 10px top 10px;
     background-repeat: no-repeat; 
     background-size : 100% auto; 

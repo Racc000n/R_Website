@@ -10,7 +10,7 @@ import { createBrowserRouter, RouterProvider} from 'react-router-dom';
 
 const router = createBrowserRouter([
   {path: "/R_Website/", element: <App/>,}, 
-  {path: "/R_Website/artpage", element: <ArtPage/>},
+  {path: "/R_Website/artpage/", element: <ArtPage/>},
   {path: "/R_Website/artpage/:artId", element: <ArtInfo/>}, 
   {path: "*", element: <NotFound/>}
     
